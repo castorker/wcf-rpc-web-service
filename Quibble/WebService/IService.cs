@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -12,6 +13,18 @@ namespace WebService
     public interface IService
     {
         [OperationContract]
-        void DoWork();
+        Quibble[] GetAll();
+
+        [OperationContract]
+        Quibble GetById(int id);
+
+        [OperationContract]
+        void Create(Quibble quibble);
+
+        [OperationContract]
+        void Update(Quibble quibble);
+
+        [OperationContract]
+        void Delete(int id);
     }
 }
