@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfQuibble">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Quibble" nillable="true" type="tns:Quibble" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQuibble" nillable="true" type="tns:ArrayOfQuibble" />
+  <xs:complexType name="Quibble">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Quibble" nillable="true" type="tns:Quibble" />
+</xs:schema>
